@@ -1,0 +1,23 @@
+<script>
+function openCard() {
+    document.querySelector(".cover").style.transform = "translateY(-100%)";
+    document.getElementById("birthdayCard").classList.add("show");
+    createHearts();
+}
+
+function createHearts() {
+    const hearts = ["💖","💗","💓","💕","💞"];
+    for (let i = 0; i < 35; i++) {
+        let heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+        heart.style.animationDuration = (Math.random() * 5 + 5) + "s";
+        document.body.appendChild(heart);
+    }
+}
+</script>
+
+</body>
+</html>
